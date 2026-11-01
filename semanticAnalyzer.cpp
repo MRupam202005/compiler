@@ -168,3 +168,26 @@ int main() {
     return 0;
 }
 
+
+
+
+/*
+
+Enter space-separated statements.
+> int x
+> x = 10
+> y = 20
+> int z
+> z = x + 5.5
+> exit
+
+--- Starting Semantic Analysis ---
+Success: Declared 'x'
+Success: Assignment to 'x' is semantically valid.
+Semantic Error: Undeclared variable 'y'
+Success: Declared 'z'
+Semantic Error: Type mismatch in '+' operation
+
+
+
+*/

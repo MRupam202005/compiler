@@ -153,3 +153,24 @@ int main(){
     file.close();
     return 0;
 }
+
+
+/*
+input.txt
+int main()
+{
+    int a = 10;
+    float b = 20.5;
+    char ch = 'A';
+    // this is comment
+
+    if(a > 5)
+    {
+        a = a + 1;
+        return a;
+    }
+
+    printf("Hello World");
+}
+
+*/

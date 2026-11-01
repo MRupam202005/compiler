@@ -80,3 +80,21 @@ int main() {
 
     return 0;
 }
+
+
+/*
+
+Enter expression: i+i*i
+Expression Accepted
+
+Enter expression: i+i
+Expression Accepted
+
+Enter expression: i+*i
+Expression Rejected
+
+Enter expression: (i+i)*i
+Expression Accepted
+
+
+*/

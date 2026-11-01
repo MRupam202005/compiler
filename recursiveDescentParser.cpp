@@ -251,3 +251,38 @@ int main()
 
     return 0;
 }
+
+
+/*
+
+Given Grammer :
+E -> TE'
+E' -> +TE' | -TE' | e
+T -> FT' 
+T' -> *FT' | /FT' | e 
+F -> (E) | id | num
+
+
+Expression : id + id * num
+AST : 
++
+  id
+  *
+    id
+    num
+Value: 110
+Expression : (id - num) / id
+AST : 
+/
+  -
+    id
+    num
+  id
+Value: 0
+(base) PS D:\College\sem5\cd\practice> 
+
+
+
+
+
+*/

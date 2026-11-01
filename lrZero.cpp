@@ -120,7 +120,6 @@ int main() {
     }
 
     for (size_t i = 0; i < states.size(); ++i) {
-        // Shift actions
         for (auto item : states[i]) {
             if (item.dot_pos < rules[item.rule_idx].rhs.size()) {
                 string a = rules[item.rule_idx].rhs[item.dot_pos];
@@ -248,3 +247,30 @@ int main() {
 
     return 0;
 }
+
+
+
+/*
+
+SLR(1) Parsing Table:
+State     a         b              $         S         A         
+-----------------------------------------------------------------
+0         s3                                 2         1         
+1                   s4             r1                            
+2                                  Acc                           
+3                   r3             r3                            
+4                   r2             r2                            
+
+Trace for input string 'abb':
+State Stack          | Symbol Stack         | Input           | Action
+-------------------------------------------------------------------------------------
+0                    |                      | abb$            | Shift 3
+0 3                  | a                    | bb$             | Reduce 3 (A -> a)
+0 1                  | A                    | bb$             | Shift 4
+0 1 4                | A b                  | b$              | Reduce 2 (A -> Ab)
+0 1                  | A                    | b$              | Shift 4
+0 1 4                | A b                  | $               | Reduce 2 (A -> Ab)
+0 1                  | A                    | $               | Reduce 1 (S -> A)
+0 2                  | S                    | $               | Accept 
+
+*/
